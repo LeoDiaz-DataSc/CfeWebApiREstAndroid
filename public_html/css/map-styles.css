@@ -1,0 +1,100 @@
+/* Estilos específicos para el mapa */
+
+/* Contenedor principal del mapa - altura fija es esencial */
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1; /* Asegurar que el mapa esté por debajo de los modales */
+}
+
+/* Personalización de marcadores */
+.custom-marker {
+    text-align: center;
+}
+
+.custom-marker .marker-pin {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Estado de los marcadores */
+.marker-pin.status-pending {
+    background-color: var(--danger-color);
+}
+
+.marker-pin.status-in-progress {
+    background-color: var(--warning-color);
+}
+
+.marker-pin.status-completed {
+    background-color: var(--success-color);
+}
+
+/* Ventana emergente del mapa */
+.custom-popup {
+    max-width: 300px;
+}
+
+.custom-popup .title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.custom-popup .status {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.custom-popup .date {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.custom-popup .description {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* Controles adicionales */
+.map-controls {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Indicador de carga del mapa */
+#map.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="%23086c4c" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/></circle></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+    border-radius: 8px;
+}

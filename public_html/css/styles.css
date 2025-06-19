@@ -1,0 +1,240 @@
+/* Estilos personalizados para CFEwEB */
+
+:root {
+    --primary-color: #086c4c;     /* Verde CFE */
+    --secondary-color: #2c3e50;   /* Azul oscuro */
+    --accent-color: #f1c40f;      /* Amarillo acento */
+    --light-color: #ecf0f1;       /* Gris claro */
+    --dark-color: #2c3e50;        /* Azul oscuro */
+    --success-color: #27ae60;     /* Verde para completado */
+    --warning-color: #f39c12;     /* Naranja para en proceso */
+    --danger-color: #e74c3c;      /* Rojo para pendiente */
+}
+
+/* Sobreescribir colores de Bootstrap */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: #055c3f !important;
+    border-color: #055c3f !important;
+}
+
+.page-content {
+    display: none;
+}
+
+.page-content.active {
+    display: block;
+}
+
+/* Estilos para el estado de reportes */
+.badge-pending {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.badge-in-progress {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.badge-completed {
+    background-color: var(--success-color);
+    color: white;
+}
+
+/* Estilos para el chat */
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message-received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+}
+
+.message-sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-sender {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: #777;
+    margin-left: 10px;
+}
+
+.message-content {
+    margin-top: 5px;
+}
+
+/* Estilos para el mapa */
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilos para los marcadores personalizados */
+.custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.marker-pending {
+    background-color: #ffc107;
+}
+
+.marker-in-progress {
+    background-color: #17a2b8;
+}
+
+.marker-completed {
+    background-color: #28a745;
+}
+
+/* Estilos para los popups */
+.popup-content {
+    padding: 5px;
+    min-width: 200px;
+}
+
+.popup-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.popup-matricula {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.popup-coordinates {
+    font-family: monospace;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.popup-date {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Estilos para los badges de estado */
+.badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: normal;
+}
+
+.badge-pending {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge-in-progress {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.badge-completed {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Estilos para el panel de información */
+#reportInfo {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Estilos para los controles del mapa */
+.leaflet-control-layers {
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: #fff;
+}
+
+.leaflet-control-layers-toggle {
+    width: 30px;
+    height: 30px;
+    background-size: 16px 16px;
+}
+
+/* Estilos para el indicador de carga */
+#map.loading {
+    position: relative;
+}
+
+#map.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.7) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="%23007bff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/></circle></svg>') center center no-repeat;
+    background-size: 50px 50px;
+    z-index: 1000;
+}
+
+/* Animación de carga */
+.loading {
+    position: relative;
+    min-height: 100px;
+}
+
+.loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
