@@ -2,12 +2,12 @@
 Este es un proyecto de logística implementado para la gestión de reporte de anomalías en un entorno para una empresa federal (CFE) cuyo objetivo es facilitar el manejo de estos, utilizando un entorno de pagina web con una api rest, con la posibilidad de implementar una aplicación Android
 
 FRONT-END - Carpeta public_html
-─────────────────────────────────
 
 index.html
 Landing page. Contiene la estructura base (navbar, secciones “Mapa”, “Reportes”, “Chat”, etc.) y los modales de login.
 Carga Bootstrap 5, FontAwesome y todos los scripts de /js.
 new-report.html
+
 Vista autónoma para crear reportes cuando se abre en ventana aparte (por ejemplo desde la app móvil).
 css/
 styles.css Estilos generales (navbar, cards, etc.).
@@ -41,9 +41,10 @@ error-handler.js
 .htaccess
  y log/
 Reescrituras para despliegue en hosting Apache y carpeta para logs web.
-─────────────────────────────────
+
+
 BACK-END - Carpeta public_html/cfeapirest
-─────────────────────────────────
+
 
 index.php
  (Front-Controller)
@@ -99,7 +100,8 @@ vendor/
 Dependencias instaladas por Composer (Firebase JWT, etc.).
 composer.json
 Define librerías PHP necesarias.
-─────────────────────────────────
+
+
 FLUJO END-TO-END RESUMIDO
 
 Usuario abre 
